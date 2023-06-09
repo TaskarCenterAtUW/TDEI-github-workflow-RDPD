@@ -1,0 +1,24 @@
+name: Provision Infrastructure
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment-name:
+        required: true
+        description: "Name of the environment to be provisioned"
+        type: string
+      config-to-use:
+        type: choice
+        description: Choose environment to copy configuration
+        options:
+          - dev
+          - test
+          - stage
+          - prod
+
+jobs:
+  PrintInputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print input values
+        run: echo "Environment Name:${{ github.event.inputs.environment-name }}, config-to-use:${{ github.event.inputs.config-to-use }}"
