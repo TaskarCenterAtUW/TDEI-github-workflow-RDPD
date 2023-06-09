@@ -21,4 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print input values
-        run: echo "Environment Name:${{ github.event.inputs.environment-name }}, config-to-use:${{ github.event.inputs.config-to-use }}"
+        run: |
+          echo "Environment Name:${{ github.event.inputs.environment-name }}, config-to-use:${{ github.event.inputs.config-to-use }}"
+          bash provision.sh
+
