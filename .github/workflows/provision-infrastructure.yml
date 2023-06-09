@@ -17,7 +17,7 @@ on:
           - prod
 
 jobs:
-  PrintInputs:
+  provision-infra:
     runs-on: ubuntu-latest
     steps:
       - name: Print input values
